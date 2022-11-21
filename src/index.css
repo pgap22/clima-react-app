@@ -1,13 +1,84 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  font-family: 'Dongle',cursive;
+}
+@media (min-width: 768px){
+  html body{
+    background-color: #e2e2e2;
+  }
+}
+html.dark body{
+  background-color: #323232;
+}
+.filterBorder{
+  filter: blur(45.5px);
+}
+.ph-bold{
+  @apply font-bold;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.sunny{
+  @apply bg-sunny;
+}
+
+.afternoon{
+  @apply bg-afternoon;
+}
+.night{
+  @apply bg-night;
+}
+
+.show-menu{
+  @apply opacity-100 translate-y-0;
+}
+.isSelected{
+  @apply block
+}
+.isSelected-element{
+  @apply bg-gray-200 dark:bg-[#282828];
+}
+
+.menu-value:checked+.menu-item{
+ @apply isSelected-element;
+}
+.menu-item:hover{
+  @apply bg-[#d0d0d0] dark:bg-[#282828];
+}
+.menu-value:checked+.menu-item .checked-img{
+ @apply isSelected;
+}
+.checked-img{
+  @apply dark:invert;
+}
+.menu-value{
+  @apply hidden;
+}
+.show-menu-tablet{
+  @apply md:flex
+}
+
+
+@media (min-width: 768px) {
+    /* width */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  /* Track */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+
+  /* Handle on hover */
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
 }
