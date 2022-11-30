@@ -51,7 +51,7 @@ function App() {
     };
     
     axios.request(options).then(({data})=>{
-      if(data.location.country.toLowerCase().trim() !== country.toLowerCase().trim()) {
+      if(!data.location.country.toLowerCase().trim().includes(country.toLowerCase().trim())) {
         setError(1)
         return false;
       };

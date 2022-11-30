@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { IconArrow } from "../icons";
+import  IconArrow  from "./IconArrow";
 import MenuItem from "./MenuItem";
 
-const Menu = ({ label = 'label', placeholder = 'placeholder', icon, saveCountry = ()=>{}, testingArray = [] }) => {
+const Menu = ({ label, placeholder, icon, saveCountry, testingArray }) => {
   const [country, changeCountry] = useState("");
 
   const [show, setShow] = useState(false);
